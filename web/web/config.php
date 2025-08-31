@@ -3,15 +3,9 @@
 // MongoDB Atlas Connection & Telegram Bot Configuration
 
 class DatabaseConfig {
-    // MongoDB Configuration (read from environment with safe defaults)
-    public static function getMongoUri() {
-        $env = getenv('MONGODB_URI');
-        return $env !== false && $env !== '' ? $env : 'mongodb://127.0.0.1:27017';
-    }
-    public static function getDatabaseName() {
-        $env = getenv('DATABASE_NAME');
-        return $env !== false && $env !== '' ? $env : 'ex_chk_db';
-    }
+    // MongoDB Configuration
+    const MONGODB_URI = 'mongodb+srv://apaman:apaman12@cluster0.svcsfim.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+    const DATABASE_NAME = 'ex_chk_db';
     
     // Collections
     const USERS_COLLECTION = 'users';
@@ -24,26 +18,11 @@ class DatabaseConfig {
 }
 
 class TelegramConfig {
-    public static function botToken() {
-        $env = getenv('TELEGRAM_BOT_TOKEN');
-        return $env !== false && $env !== '' ? $env : '';
-    }
-    public static function chatId() {
-        $env = getenv('TELEGRAM_CHAT_ID');
-        return $env !== false && $env !== '' ? $env : '';
-    }
-    public static function notificationChatId() {
-        $env = getenv('TELEGRAM_NOTIFICATION_CHAT_ID');
-        return $env !== false && $env !== '' ? $env : self::chatId();
-    }
-    public static function botName() {
-        $env = getenv('TELEGRAM_BOT_NAME');
-        return $env !== false && $env !== '' ? $env : 'Legendlogsebot';
-    }
-    public static function botSecret() {
-        $env = getenv('TELEGRAM_BOT_SECRET');
-        return $env !== false && $env !== '' ? $env : 'WebAppData';
-    }
+    const BOT_TOKEN = '8305972211:AAGpfN5uiUMqXCw3KjmF07MN059SMggDGJ4'; // Fallback
+    const CHAT_ID = '--1002854309982';
+    const NOTIFICATION_CHAT_ID = '--1002854309982'; // Fallback
+    const BOT_NAME = 'Legendlogsebot'; // Remove @ symbol for widget
+    const BOT_SECRET = 'WebAppData'; // Use WebAppData for widget verification
 }
 
 class SiteConfig {
@@ -75,18 +54,11 @@ class SiteConfig {
 }
 
 class AppConfig {
+    const DOMAIN = 'http://legend.sonugamingop.tech';
+    const CHECKER_API_URL = 'http://legend.sonugamingop.tech/autosh.php';
     const SESSION_TIMEOUT = 86400; // 24 hours
     const DAILY_CREDIT_AMOUNT = 10; // Fallback
     const MAX_CONCURRENT_CHECKS = 20;
-
-    public static function domain() {
-        $env = getenv('APP_DOMAIN');
-        return $env !== false && $env !== '' ? $env : (isset($_SERVER['HTTP_HOST']) ? ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] : 'http://localhost');
-    }
-    public static function checkerApiUrl() {
-        $env = getenv('CHECKER_API_URL');
-        return $env !== false && $env !== '' ? $env : self::domain() . '/autosh.php';
-    }
     
     // Role definitions
     const ROLE_FREE = 'free';
@@ -127,7 +99,7 @@ function setSecurityHeaders() {
     
     // Enhanced Content Security Policy for Telegram widget
     $nonce = base64_encode(random_bytes(16));
-    header("Content-Security-Policy: default-src 'self'; script-src 'self' 'nonce-{$nonce}' https://telegram.org https://oauth.telegram.org; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https: blob:; connect-src 'self' https://api.telegram.org https://oauth.telegram.org; frame-src https://oauth.telegram.org;");
+    header("Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'nonce-{$nonce}' https://telegram.org https://oauth.telegram.org; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https: blob:; connect-src 'self' https://api.telegram.org https://oauth.telegram.org; frame-src https://oauth.telegram.org;");
     
     return $nonce;
 }
@@ -147,10 +119,8 @@ function initSecureSession() {
     if (session_status() === PHP_SESSION_NONE) {
         // Enhanced session security with error suppression
         if (session_status() === PHP_SESSION_NONE) {
-            $isHttps = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') || 
-                       (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https');
             @ini_set('session.cookie_httponly', 1);
-            @ini_set('session.cookie_secure', $isHttps ? 1 : 0);
+            @ini_set('session.cookie_secure', 0); // Set to 0 for ngrok HTTP support
             @ini_set('session.cookie_samesite', 'Lax');
             @ini_set('session.use_strict_mode', 1);
             @ini_set('session.cookie_lifetime', 86400); // 24 hours for persistence
