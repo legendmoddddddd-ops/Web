@@ -35,7 +35,7 @@ class TelegramAuth {
         logError('Data check string', ['string' => $dataCheckString]);
         
         // Create secret key from bot token
-        $secretKey = hash('sha256', TelegramConfig::BOT_TOKEN, true);
+        $secretKey = hash('sha256', TelegramConfig::botToken(), true);
         $hash = hash_hmac('sha256', $dataCheckString, $secretKey);
         
         logError('Hash comparison', ['calculated' => $hash, 'received' => $checkHash]);
@@ -118,7 +118,7 @@ class TelegramAuth {
         $message .= "👑 **Role:** " . ucfirst($userData['role']) . "\n";
         $message .= "💰 **Credits:** " . formatNumber($userData['credits']) . "\n";
         $message .= "🕐 **Time:** " . date('Y-m-d H:i:s') . "\n";
-        $message .= "🌐 **Domain:** " . AppConfig::DOMAIN;
+        $message .= "🌐 **Domain:** " . AppConfig::domain();
         
         sendTelegramNotification($message);
     }

@@ -134,7 +134,7 @@ $system_stats = [
                         <div class="col-6">
                             <p><strong>Server Time:</strong> <?php echo date('M j, Y g:i A'); ?></p>
                             <p><strong>Session ID:</strong> <?php echo substr(session_id(), 0, 8) . '...'; ?></p>
-                            <p><strong>Database:</strong> <?php echo DatabaseConfig::DATABASE_NAME; ?></p>
+                            <p><strong>Database:</strong> <?php echo DatabaseConfig::getDatabaseName(); ?></p>
                         </div>
                     </div>
                 </div>
