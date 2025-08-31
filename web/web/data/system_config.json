@@ -1,0 +1,17 @@
+{
+    "maintenance_mode": false,
+    "bot_token": "8429990423:AAFqHktR211TMmZiR5UdLDnLSX0Ks5R83s0",
+    "notification_chat_id": "-100279256732",
+    "daily_credit_amount": 10,
+    "card_check_cost": 1,
+    "site_check_cost": 1,
+    "checker_api_url": "https:\/\/edcae9ee471b.ngrok-free.app\/autosh.php",
+    "max_concurrent_checks": 20,
+    "card_check_timeout": 30,
+    "site_check_timeout": 15,
+    "rate_limit_per_minute": 60,
+    "enable_card_checker": true,
+    "enable_site_checker": true,
+    "proxy_enabled": false,
+    "proxy_list": ""
+}

@@ -1,0 +1,101 @@
+[
+    {
+        "admin_id": "7580639195",
+        "action": "tool_config_updated",
+        "target_id": null,
+        "details": {
+            "checker_api_url": "https:\/\/edcae9ee471b.ngrok-free.app\/autosh.php",
+            "max_concurrent_checks": 20,
+            "card_check_timeout": 30,
+            "site_check_timeout": 15,
+            "rate_limit_per_minute": 60,
+            "enable_card_checker": true,
+            "enable_site_checker": false,
+            "proxy_enabled": false,
+            "proxy_list": ""
+        },
+        "timestamp": 1756263399,
+        "ip_address": "::1"
+    },
+    {
+        "admin_id": "7580639195",
+        "action": "tool_config_updated",
+        "target_id": null,
+        "details": {
+            "checker_api_url": "https:\/\/edcae9ee471b.ngrok-free.app\/autosh.php",
+            "max_concurrent_checks": 20,
+            "card_check_timeout": 30,
+            "site_check_timeout": 15,
+            "rate_limit_per_minute": 60,
+            "enable_card_checker": true,
+            "enable_site_checker": false,
+            "proxy_enabled": false,
+            "proxy_list": ""
+        },
+        "timestamp": 1756263427,
+        "ip_address": "::1"
+    },
+    {
+        "admin_id": "7580639195",
+        "action": "tool_config_updated",
+        "target_id": null,
+        "details": {
+            "checker_api_url": "https:\/\/edcae9ee471b.ngrok-free.app\/autosh.php",
+            "max_concurrent_checks": 20,
+            "card_check_timeout": 30,
+            "site_check_timeout": 15,
+            "rate_limit_per_minute": 60,
+            "enable_card_checker": true,
+            "enable_site_checker": true,
+            "proxy_enabled": false,
+            "proxy_list": ""
+        },
+        "timestamp": 1756263442,
+        "ip_address": "::1"
+    },
+    {
+        "admin_id": "7580639195",
+        "action": "stats_recalculated",
+        "target_id": null,
+        "details": {
+            "operation": "all_stats"
+        },
+        "timestamp": 1756263556,
+        "ip_address": "::1"
+    },
+    {
+        "admin_id": "7580639195",
+        "action": "role_changed",
+        "target_id": "6658831303",
+        "details": {
+            "new_role": "admin",
+            "changed_by": "7580639195"
+        },
+        "timestamp": 1756265315,
+        "ip_address": "::1"
+    },
+    {
+        "admin_id": "7580639195",
+        "action": "broadcast_sent",
+        "target_id": null,
+        "details": {
+            "target": "all",
+            "message_length": 2,
+            "users_targeted": 5,
+            "messages_sent": 5
+        },
+        "timestamp": 1756265840,
+        "ip_address": "::1"
+    },
+    {
+        "admin_id": "7580639195",
+        "action": "broadcast_sent",
+        "target_id": "Sent both broadcast to all users",
+        "details": {
+            "message_length": 11,
+            "priority": "normal"
+        },
+        "timestamp": 1756270457,
+        "ip_address": "::1"
+    }
+]

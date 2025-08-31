@@ -1,0 +1,42 @@
+[
+    {
+        "user_id": "7580639195",
+        "total_hits": 0,
+        "total_charge_cards": 0,
+        "total_live_cards": 0,
+        "expiry_date": null,
+        "updated_at": 1756224549
+    },
+    {
+        "user_id": "8010825497",
+        "total_hits": 0,
+        "total_charge_cards": 0,
+        "total_live_cards": 0,
+        "expiry_date": null,
+        "updated_at": 1756224622
+    },
+    {
+        "user_id": "7948097888",
+        "total_hits": 0,
+        "total_charge_cards": 0,
+        "total_live_cards": 0,
+        "expiry_date": null,
+        "updated_at": 1756225631
+    },
+    {
+        "user_id": "6658831303",
+        "total_hits": 0,
+        "total_charge_cards": 0,
+        "total_live_cards": 0,
+        "expiry_date": null,
+        "updated_at": 1756226878
+    },
+    {
+        "user_id": "7563262409",
+        "total_hits": 0,
+        "total_charge_cards": 0,
+        "total_live_cards": 0,
+        "expiry_date": null,
+        "updated_at": 1756228383
+    }
+]
