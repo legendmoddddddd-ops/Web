@@ -16,6 +16,7 @@ class ExChkApp {
         this.setupFormValidation();
         this.setupProgressBars();
         this.setupTooltips();
+        this.setupBinLookup();
     }
 
     setupEventListeners() {
@@ -158,6 +159,65 @@ class ExChkApp {
             card.addEventListener('mouseleave', () => {
                 this.animateCardHover(card, false);
             });
+        });
+    }
+
+    setupBinLookup() {
+        const btn = document.getElementById('binLookupBtn');
+        const input = document.getElementById('binInput');
+        const result = document.getElementById('binResult');
+        if (!btn || !input || !result) return;
+
+        const render = (data) => {
+            const fields = [
+                ['BIN', data.bin],
+                ['Scheme', data.scheme],
+                ['Brand', data.brand],
+                ['Type', data.type],
+                ['Level', data.level],
+                ['Bank', data.bank_name],
+                ['Website', data.bank_url],
+                ['Phone', data.bank_phone],
+                ['Country', data.country_name],
+                ['ISO', data.country_code],
+                ['Currency', data.currency]
+            ];
+            const html = `
+                <div class="result-card">
+                    <div class="result-card-header">
+                        <div class="result-card-title">BIN Information</div>
+                        <button class="copy-button" data-text="${(data.bin||'')} ${(data.brand||'')} ${(data.bank_name||'')}">Copy</button>
+                    </div>
+                    <div class="card-details">
+                        ${fields.map(([k,v]) => `<div class="detail-row"><span class="label">${k}</span><span class="value">${v ?? '-'}</span></div>`).join('')}
+                    </div>
+                </div>`;
+            result.innerHTML = html;
+            result.style.display = 'block';
+        };
+
+        const notify = (type, text) => {
+            try { window.ExChkNotifications?.show?.(type, text); } catch(e) {}
+        };
+
+        btn.addEventListener('click', async () => {
+            const raw = (input.value || '').replace(/\D+/g, '');
+            if (raw.length < 6 || raw.length > 8) {
+                notify('error', 'Please enter a valid BIN (6-8 digits).');
+                return;
+            }
+            btn.disabled = true; btn.textContent = 'Looking...';
+            try {
+                const r = await fetch(`api/bin_lookup.php?bin=${raw}`, { headers: { 'Accept': 'application/json' } });
+                const j = await r.json();
+                if (!j.success) throw new Error(j.error || 'Lookup failed');
+                render(j.data);
+                notify('success', 'BIN info loaded');
+            } catch (e) {
+                notify('error', e.message || 'BIN lookup failed');
+            } finally {
+                btn.disabled = false; btn.textContent = 'Lookup';
+            }
         });
     }
 

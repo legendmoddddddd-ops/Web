@@ -783,6 +783,15 @@ $site_input_raw = isset($_POST['sites_input']) ? trim($_POST['sites_input']) : '
 
     <div class="main-wrapper">
         <div class="panel">
+            <h2>BIN Lookup</h2>
+            <form id="binLookupForm" class="input-group" onsubmit="return false;">
+                <label for="binInput">Enter BIN (6-8 digits):</label>
+                <input type="text" id="binInput" maxlength="8" placeholder="e.g. 411111">
+                <button type="button" id="binLookupBtn" class="play-button" style="margin-left:10px;">Lookup</button>
+            </form>
+            <div id="binResult" class="result-card" style="display:none; margin-top:12px;"></div>
+        </div>
+        <div class="panel">
             <h2>Card Checker</h2>
             <form id="checkForm">
                 <textarea name="cards_input" id="cardsInput" placeholder="Enter Cards (one per line, format: xxxx|xx|xxxx|xxx)"><?php echo htmlspecialchars($card_input_raw); ?></textarea>
