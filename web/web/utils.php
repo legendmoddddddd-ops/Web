@@ -140,4 +140,41 @@ function generateCSRFToken() {
 function verifyCSRFToken($token) {
     return isset($_SESSION['csrf_token']) && hash_equals($_SESSION['csrf_token'], $token);
 }
+
+/**
+ * Luhn algorithm check for card numbers
+ */
+function luhnCheck($number) {
+    $number = preg_replace('/\D+/', '', (string)$number);
+    if ($number === '' || strlen($number) < 12) return false;
+    $sum = 0;
+    $alt = false;
+    for ($i = strlen($number) - 1; $i >= 0; $i--) {
+        $n = (int)$number[$i];
+        if ($alt) {
+            $n *= 2;
+            if ($n > 9) $n -= 9;
+        }
+        $sum += $n;
+        $alt = !$alt;
+    }
+    return ($sum % 10) === 0;
+}
+
+/**
+ * Detect card brand from number using IIN ranges
+ */
+function detectCardBrand($number) {
+    $number = preg_replace('/\D+/', '', (string)$number);
+    if (preg_match('/^4\d{12}(\d{3})?(\d{3})?$/', $number)) return 'Visa';
+    if (preg_match('/^(5[1-5]\d{14}|2(2[2-9]|[3-6]\d|7[01])\d{12}|2720\d{12})$/', $number)) return 'Mastercard';
+    if (preg_match('/^3[47]\d{13}$/', $number)) return 'American Express';
+    if (preg_match('/^6(?:011|5\d{2})\d{12}$/', $number)) return 'Discover';
+    if (preg_match('/^(?:2131|1800|35\d{3})\d{11}$/', $number)) return 'JCB';
+    if (preg_match('/^3(?:0[0-5]|[68]\d)\d{11}$/', $number)) return 'Diners Club';
+    if (preg_match('/^220[0-4]\d{12}$/', $number)) return 'MIR';
+    if (preg_match('/^(62|81)\d{14,17}$/', $number)) return 'UnionPay';
+    if (preg_match('/^(50|5[6-9]|6[0-9])\d{10,17}$/', $number)) return 'Maestro';
+    return 'Unknown';
+}
 ?>
