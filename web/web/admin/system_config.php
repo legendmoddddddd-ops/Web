@@ -27,8 +27,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // Load current settings
 $maintenance_mode = SiteConfig::get('maintenance_mode', false);
-$bot_token = SiteConfig::get('bot_token', TelegramConfig::botToken());
-$notification_chat_id = SiteConfig::get('notification_chat_id', TelegramConfig::notificationChatId());
+$bot_token = SiteConfig::get('bot_token', TelegramConfig::BOT_TOKEN);
+$notification_chat_id = SiteConfig::get('notification_chat_id', TelegramConfig::NOTIFICATION_CHAT_ID);
 $daily_credit_amount = SiteConfig::get('daily_credit_amount', AppConfig::DAILY_CREDIT_AMOUNT);
 $card_check_cost = SiteConfig::get('card_check_cost', AppConfig::CARD_CHECK_COST);
 $site_check_cost = SiteConfig::get('site_check_cost', AppConfig::SITE_CHECK_COST);
@@ -175,7 +175,7 @@ $site_check_cost = SiteConfig::get('site_check_cost', AppConfig::SITE_CHECK_COST
                                 <?php echo $maintenance_mode ? '<span class="badge bg-warning">Enabled</span>' : '<span class="badge bg-success">Disabled</span>'; ?>
                             </p>
                             <p><strong>PHP Version:</strong> <?php echo PHP_VERSION; ?></p>
-                            <p><strong>Database:</strong> <?php echo DatabaseConfig::getDatabaseName(); ?></p>
+                            <p><strong>Database:</strong> <?php echo DatabaseConfig::DATABASE_NAME; ?></p>
                         </div>
                         <div class="col-md-6">
                             <h6>Credit System</h6>

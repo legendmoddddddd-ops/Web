@@ -143,7 +143,7 @@ $db = Database::getInstance();
                             <p><strong>PHP Version:</strong> <?php echo PHP_VERSION; ?></p>
                         </div>
                         <div class="col-md-6">
-                            <p><strong>Database:</strong> <?php echo DatabaseConfig::getDatabaseName(); ?></p>
+                            <p><strong>Database:</strong> <?php echo DatabaseConfig::DATABASE_NAME; ?></p>
                             <p><strong>Server Time:</strong> <?php echo date('M j, Y g:i A'); ?></p>
                             <p><strong>Session Status:</strong> <span class="badge bg-success">Active</span></p>
                         </div>

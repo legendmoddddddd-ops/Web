@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 // Load current settings
-$checker_api_url = SiteConfig::get('checker_api_url', AppConfig::checkerApiUrl());
+$checker_api_url = SiteConfig::get('checker_api_url', AppConfig::CHECKER_API_URL);
 $max_concurrent_checks = SiteConfig::get('max_concurrent_checks', AppConfig::MAX_CONCURRENT_CHECKS);
 $card_check_timeout = SiteConfig::get('card_check_timeout', 30);
 $site_check_timeout = SiteConfig::get('site_check_timeout', 15);

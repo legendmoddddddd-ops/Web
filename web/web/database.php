@@ -16,8 +16,8 @@ class Database {
             }
             
             // MongoDB connection using MongoDB PHP Library
-            $this->client = new MongoDB\Client(DatabaseConfig::getMongoUri());
-            $this->database = $this->client->selectDatabase(DatabaseConfig::getDatabaseName());
+            $this->client = new MongoDB\Client(DatabaseConfig::MONGODB_URI);
+            $this->database = $this->client->selectDatabase(DatabaseConfig::DATABASE_NAME);
             
             // Test connection
             $this->database->command(['ping' => 1]);

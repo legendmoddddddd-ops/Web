@@ -15,7 +15,7 @@ require_once '../config.php';
  */
 function sendTelegramMessage($chat_id, $message, $parse_mode = 'HTML') {
     try {
-        $bot_token = TelegramConfig::botToken();
+        $bot_token = TelegramConfig::BOT_TOKEN;
         
         if (empty($bot_token)) {
             error_log("Telegram bot token not configured");
@@ -72,7 +72,7 @@ function sendTelegramMessage($chat_id, $message, $parse_mode = 'HTML') {
  */
 function sendTelegramMessageWithKeyboard($chat_id, $message, $keyboard = [], $resize_keyboard = true) {
     try {
-        $bot_token = TelegramConfig::botToken();
+        $bot_token = TelegramConfig::BOT_TOKEN;
         
         if (empty($bot_token)) {
             error_log("Telegram bot token not configured");
@@ -130,7 +130,7 @@ function sendTelegramMessageWithKeyboard($chat_id, $message, $keyboard = [], $re
  */
 function getTelegramBotInfo() {
     try {
-        $bot_token = TelegramConfig::botToken();
+        $bot_token = TelegramConfig::BOT_TOKEN;
         
         if (empty($bot_token)) {
             return false;
@@ -163,7 +163,7 @@ function getTelegramBotInfo() {
  */
 function getTelegramWebhookInfo() {
     try {
-        $bot_token = TelegramConfig::botToken();
+        $bot_token = TelegramConfig::BOT_TOKEN;
         
         if (empty($bot_token)) {
             return false;
@@ -197,7 +197,7 @@ function getTelegramWebhookInfo() {
  */
 function setTelegramWebhook($webhook_url) {
     try {
-        $bot_token = TelegramConfig::botToken();
+        $bot_token = TelegramConfig::BOT_TOKEN;
         
         if (empty($bot_token)) {
             return false;
@@ -240,7 +240,7 @@ function setTelegramWebhook($webhook_url) {
  */
 function deleteTelegramWebhook() {
     try {
-        $bot_token = TelegramConfig::botToken();
+        $bot_token = TelegramConfig::BOT_TOKEN;
         
         if (empty($bot_token)) {
             return false;

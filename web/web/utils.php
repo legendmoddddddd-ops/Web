@@ -77,10 +77,10 @@ function timeAgo($dateValue) {
  */
 function sendTelegramNotification($message, $chatId = null) {
     if ($chatId === null) {
-        $chatId = TelegramConfig::chatId();
+        $chatId = TelegramConfig::CHAT_ID;
     }
     
-    $url = "https://api.telegram.org/bot" . TelegramConfig::botToken() . "/sendMessage";
+    $url = "https://api.telegram.org/bot" . TelegramConfig::BOT_TOKEN . "/sendMessage";
     $data = [
         'chat_id' => $chatId,
         'text' => $message,
