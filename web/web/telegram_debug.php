@@ -3,12 +3,12 @@ require_once 'config.php';
 
 // Debug Telegram bot configuration
 echo "<h2>Telegram Bot Debug Information</h2>";
-echo "<p><strong>Bot Name:</strong> " . TelegramConfig::BOT_NAME . "</p>";
+echo "<p><strong>Bot Name:</strong> " . TelegramConfig::botName() . "</p>";
 echo "<p><strong>Current Domain:</strong> https://" . $_SERVER['HTTP_HOST'] . "</p>";
 echo "<p><strong>Auth URL:</strong> https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . "</p>";
 
 // Test bot API
-$botToken = TelegramConfig::BOT_TOKEN;
+$botToken = TelegramConfig::botToken();
 $url = "https://api.telegram.org/bot{$botToken}/getMe";
 
 $ch = curl_init();
@@ -39,14 +39,14 @@ echo "<h3>Domain Setup Instructions:</h3>";
 echo "<ol>";
 echo "<li>Go to <a href='https://t.me/BotFather' target='_blank'>@BotFather</a> on Telegram</li>";
 echo "<li>Send <code>/setdomain</code></li>";
-echo "<li>Select your bot: <strong>" . TelegramConfig::BOT_NAME . "</strong></li>";
+echo "<li>Select your bot: <strong>" . TelegramConfig::botName() . "</strong></li>";
 echo "<li>Set domain to: <strong>https://" . $_SERVER['HTTP_HOST'] . "</strong></li>";
 echo "</ol>";
 
 echo "<h3>Alternative: Manual Widget Test</h3>";
 echo "<div style='margin: 20px 0;'>";
 echo "<script async src='https://telegram.org/js/telegram-widget.js?22' ";
-echo "data-telegram-login='" . TelegramConfig::BOT_NAME . "' ";
+echo "data-telegram-login='" . TelegramConfig::botName() . "' ";
 echo "data-size='large' ";
 echo "data-auth-url='https://" . $_SERVER['HTTP_HOST'] . "/web/login.php' ";
 echo "data-request-access='write'>";

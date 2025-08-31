@@ -341,7 +341,7 @@ if (isset($_GET['id']) && isset($_GET['hash'])) {
                 <label class="form-label">Sign in with your Telegram account</label>
                 <div class="telegram-login-wrapper">
                     <script async src="https://telegram.org/js/telegram-widget.js?22" 
-                            data-telegram-login="<?php echo TelegramConfig::BOT_NAME; ?>" 
+                            data-telegram-login="<?php echo TelegramConfig::botName(); ?>" 
                             data-size="large" 
                             data-auth-url="<?php echo $protocol . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>" 
                             data-request-access="write"
@@ -390,7 +390,7 @@ if (isset($_GET['id']) && isset($_GET['hash'])) {
         </div>
 
         <div class="footer">
-            <p>Powered by <a href="https://t.me/<?php echo str_replace('@', '', TelegramConfig::BOT_NAME); ?>" target="_blank"><?php echo TelegramConfig::BOT_NAME; ?></a></p>
+            <p>Powered by <a href="https://t.me/<?php echo str_replace('@', '', TelegramConfig::botName()); ?>" target="_blank"><?php echo TelegramConfig::botName(); ?></a></p>
             <p>© 2025 LEGEND CHECKER. All rights reserved.</p>
         </div>
     </div>
