@@ -1,0 +1,32 @@
+[
+    {
+        "user_id": "8010825497",
+        "claim_date": "2025-08-26",
+        "credits_awarded": 10,
+        "created_at": 1756225240
+    },
+    {
+        "user_id": "7948097888",
+        "claim_date": "2025-08-26",
+        "credits_awarded": 10,
+        "created_at": 1756225640
+    },
+    {
+        "user_id": "6658831303",
+        "claim_date": "2025-08-26",
+        "credits_awarded": 10,
+        "created_at": 1756226899
+    },
+    {
+        "user_id": "7580639195",
+        "claim_date": "2025-08-26",
+        "credits_awarded": 10,
+        "created_at": 1756227948
+    },
+    {
+        "user_id": "7580639195",
+        "claim_date": "2025-08-27",
+        "credits_awarded": 10,
+        "created_at": 1756261364
+    }
+]

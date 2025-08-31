@@ -1,0 +1,67 @@
+[
+    {
+        "telegram_id": "7580639195",
+        "username": "amanpandey1212",
+        "display_name": "\uaa96\uaa91\uaa96\uaa80 \u5bb6\u4eba ",
+        "avatar_url": "https:\/\/t.me\/i\/userpic\/320\/JrLGyDzL-Zouu0tX1ad_xfW-c1IOnEKn8cM4QZFFcoU3gCQQ5r52gGKRxPEdjL-g.jpg",
+        "role": "owner",
+        "credits": 70,
+        "xcoin_balance": 0,
+        "last_login_at": 1756296832,
+        "membership_verified_at": 1756224549,
+        "created_at": 1756224549,
+        "updated_at": 1756296832
+    },
+    {
+        "telegram_id": "8010825497",
+        "username": "amanpandey121",
+        "display_name": "AP ",
+        "avatar_url": "https:\/\/t.me\/i\/userpic\/320\/GuoEOgDiui1wjkOsJPVlNinlkYCV3sAdzjrfF6maZ3w1HOOGa48iyxaIKBXVU2We.jpg",
+        "role": "free",
+        "credits": 60,
+        "xcoin_balance": 0,
+        "last_login_at": 1756236528,
+        "membership_verified_at": 1756224622,
+        "created_at": 1756224622,
+        "updated_at": 1756236528
+    },
+    {
+        "telegram_id": "7948097888",
+        "username": "alexshings",
+        "display_name": "ALEX KING WS\ud83d\udc51 ",
+        "avatar_url": "https:\/\/t.me\/i\/userpic\/320\/QuHkVwGv-U7Hu_QbxEzyJ1NR_rGubcQe71cz_cTtFohOLI97ZSNLSyjJia7dW3zh.jpg",
+        "role": "free",
+        "credits": 60,
+        "xcoin_balance": 0,
+        "last_login_at": 1756226109,
+        "membership_verified_at": 1756225631,
+        "created_at": 1756225631,
+        "updated_at": 1756226109
+    },
+    {
+        "telegram_id": "6658831303",
+        "username": "rocket_0_07",
+        "display_name": "\u13a1\u13be\u13df\u13e6\u13ac\u13a2 ",
+        "avatar_url": "https:\/\/t.me\/i\/userpic\/320\/GHRPprTbGTnlqGBIzSGLUwBR9Pfn_hAddi-RtMj2zGYO77q8o9PdWnGO4-bi-4pe.jpg",
+        "role": "admin",
+        "credits": 60,
+        "xcoin_balance": 0,
+        "last_login_at": 1756288697,
+        "membership_verified_at": 1756226878,
+        "created_at": 1756226878,
+        "updated_at": 1756288697
+    },
+    {
+        "telegram_id": "7563262409",
+        "username": "Sameerpt6",
+        "display_name": "S\u1d00\u1d0d\u1d07\u1d07\u0280 ",
+        "avatar_url": null,
+        "role": "free",
+        "credits": 50,
+        "xcoin_balance": 0,
+        "last_login_at": 1756287443,
+        "membership_verified_at": 1756228383,
+        "created_at": 1756228383,
+        "updated_at": 1756287443
+    }
+]
